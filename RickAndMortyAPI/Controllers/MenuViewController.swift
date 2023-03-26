@@ -11,7 +11,7 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
-    var randomCharacter: Character?
+    private var randomCharacter: Character?
     
     // MARK: - Navigation
     
@@ -21,26 +21,9 @@ class MenuViewController: UIViewController {
             guard let allCharacterVC = segue.destination as? AllCharacterCollectionViewController else { return }
             allCharacterVC.fetchCharacter(from: link.allCharacter.rawValue)
         } else if segue.identifier == "showRandomCharacter" {
+            let link = link.allCharacter.rawValue + String(Int.random(in: 1...826))
             guard let infoCharacterVC = segue.destination as? InfoCharacterViewController else { return }
-            infoCharacterVC.character = randomCharacter
-        }
-    }
-    
-    @IBAction func randomCharacterButtonPressed() {
-        let link = link.allCharacter.rawValue + String(Int.random(in: 1...826))
-        fetchRandomCharacter(from: link)
-        performSegue(withIdentifier: "showRandomCharacter", sender: nil)
-    }
-    
-    private func fetchRandomCharacter(from link: String) {
-        NetworkManger.shared.fetch(dataType: Character.self, from: link) { [weak self] result in
-            switch result {
-            case .success(let character):
-                self?.randomCharacter = character
-                print(character)
-            case .failure(let error):
-                print(error)
-            }
+            infoCharacterVC.fetchRandomCharacter(from: link)
         }
     }
 }

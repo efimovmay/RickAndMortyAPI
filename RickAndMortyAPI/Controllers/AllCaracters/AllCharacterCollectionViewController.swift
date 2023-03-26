@@ -16,13 +16,7 @@ class AllCharacterCollectionViewController: UICollectionViewController {
     
     private var allCharacter: AllCharacter?
     
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//    }
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let infoCharacterVC = segue.destination as? InfoCharacterViewController else { return }
         guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
@@ -45,6 +39,7 @@ class AllCharacterCollectionViewController: UICollectionViewController {
         
         return cell
     }
+
     
     //MARK: - Navigation
     

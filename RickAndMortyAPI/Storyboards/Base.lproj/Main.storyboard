@@ -43,7 +43,7 @@
                                             <color key="baseBackgroundColor" red="0.066666666669999999" green="0.53725490200000003" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="randomCharacterButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="rLR-Cp-xSD"/>
+                                            <segue destination="ZFn-Hp-cpX" kind="showDetail" identifier="showRandomCharacter" id="WpH-gk-Ehy"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -66,9 +66,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jKz-Gd-wzS"/>
-                    <connections>
-                        <segue destination="ZFn-Hp-cpX" kind="showDetail" identifier="showRandomCharacter" id="Tre-Xn-bPC"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -226,7 +223,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KF6-iX-eG3"/>
+        <segue reference="WpH-gk-Ehy"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="logo" width="800" height="340"/>
